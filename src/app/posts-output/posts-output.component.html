@@ -1,2 +1,11 @@
-<p>posts-output works!</p>
-<app-post-square *ngFor="let post of allPosts" [post]="post"></app-post-square>
+<h1>HUNDY</h1>
+<h3>THE 100 MYSTERIOUS SQUARES YOU DIDN'T KNOW YOU NEEDED</h3>
+<!-- <p>posts-output works!</p> -->
+<div class="grid-container">
+    <app-post-square 
+        *ngFor="let post of allPosts" 
+        [post]="post" 
+        class="grid-item">
+    </app-post-square>
+</div>
+
