@@ -7,6 +7,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { postsReducer } from './store/posts.reducer';
 import { PostsOutputComponent } from './posts-output/posts-output.component';
+import { PostsEffects } from './store/posts.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,11 @@ import { PostsOutputComponent } from './posts-output/posts-output.component';
     ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     StoreModule.forRoot({
       posts: postsReducer
     }, {}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([PostsEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
