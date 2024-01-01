@@ -1,11 +1,7 @@
 import { Component, Input } from '@angular/core';
-// import { Store } from '@ngrx/store';
-// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-square',
-  // standalone: true,
-  // imports: [],
   templateUrl: './post-square.component.html',
   styleUrl: './post-square.component.css'
 })
@@ -14,6 +10,20 @@ export class PostSquareComponent {
 
   constructor() { }
 
+  counter = 0;
+  squareProps = ['title', 'userId', 'id', 'body'];
+  currentProp = 'title';
+
+  increaseCounter(){
+    if (this.counter === this.squareProps.length - 1) {
+      this.counter = 0;
+    } else {
+      this.counter++;
+    }
+    this.currentProp = this.squareProps[this.counter];
+    console.log(this.counter);
+    console.log(this.currentProp);
+  }
 }
 
 interface Post {
