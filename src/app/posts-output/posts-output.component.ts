@@ -5,14 +5,14 @@ import { init } from '../store/posts.actions';
 
 @Component({
   selector: 'app-posts-output',
-  // standalone: true,
-  // imports: [],
   templateUrl: './posts-output.component.html',
   styleUrl: './posts-output.component.css'
 })
 export class PostsOutputComponent {
   posts$: Observable<Post[]>;
   allPosts: Post[]
+  selectedSquare = 0;
+  squareClicked = false;
 
   constructor(private store: Store<{posts: []}>) { 
     this.posts$ = store.select('posts');
@@ -20,13 +20,16 @@ export class PostsOutputComponent {
     this.posts$.subscribe(posts => {
       this.allPosts = posts;
     });
-    console.log(this.allPosts);
   }
 
   ngOnInit(): void {
     this.store.dispatch(init());
   }
 
+  setSelectedSquare(i: number){
+    this.squareClicked = true;
+    this.selectedSquare = this.allPosts[i].id;
+  }
 }
 
 interface Post {

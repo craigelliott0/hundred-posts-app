@@ -8,6 +8,8 @@ import { Component, Input } from '@angular/core';
 export class PostSquareComponent {
   @Input() post: Post = { userId: 0, id: 0, title: '', body: '' };
 
+  @Input() selectedSquare = 0;
+
   constructor() { }
 
   counter = 0;
@@ -21,8 +23,6 @@ export class PostSquareComponent {
       this.counter++;
     }
     this.currentProp = this.squareProps[this.counter];
-    console.log(this.counter);
-    console.log(this.currentProp);
   }
 }
 

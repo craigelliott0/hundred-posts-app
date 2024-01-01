@@ -1,10 +1,11 @@
 <h1>HUNDY</h1>
-<h3>THE 100 MYSTERIOUS SQUARES YOU DIDN'T KNOW YOU NEEDED</h3>
-<!-- <p>posts-output works!</p> -->
+<h3 *ngIf="selectedSquare && squareClicked">LAST POST ID: {{ selectedSquare }}</h3>
 <div class="grid-container">
     <app-post-square 
-        *ngFor="let post of allPosts" 
-        [post]="post" 
+        *ngFor="let post of allPosts; let i = index"
+        (click)="setSelectedSquare(i)"
+        [post]="post"
+        [selectedSquare]="selectedSquare"
         class="grid-item">
     </app-post-square>
 </div>
