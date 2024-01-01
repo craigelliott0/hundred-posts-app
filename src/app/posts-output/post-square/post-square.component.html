@@ -1,6 +1,6 @@
 <div (click)="increaseCounter()" class="square">
-    <p *ngIf="currentProp === 'title' || selectedSquare !== post.id">Title: {{ post.title }}</p>
-    <p *ngIf="currentProp === 'body' && selectedSquare === post.id">Body: {{ post.body }}</p>
-    <p *ngIf="currentProp === 'id' && selectedSquare === post.id">Post ID: {{ post.id }}</p>
-    <p *ngIf="currentProp === 'userId' && selectedSquare === post.id">User ID: {{ post.userId }}</p>
+    <p *ngIf="currentProp === 'title'">Title: {{ post.title }}</p>
+    <p *ngIf="currentProp === 'body'">Body: {{ post.body }}</p>
+    <p *ngIf="currentProp === 'id'">Post ID: {{ post.id }}</p>
+    <p *ngIf="currentProp === 'userId'">User ID: {{ post.userId }}</p>
 </div>

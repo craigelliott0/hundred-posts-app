@@ -10,11 +10,18 @@ export class PostSquareComponent {
 
   @Input() selectedSquare = 0;
 
-  constructor() { }
-
   counter = 0;
   squareProps = ['title', 'userId', 'id', 'body'];
   currentProp = 'title';
+
+  constructor() { }
+
+  ngOnChanges() {
+    if (this.selectedSquare !== this.post.id) {
+      this.counter = 0;
+      this.currentProp = this.squareProps[this.counter];
+    }
+  }
 
   increaseCounter(){
     if (this.counter === this.squareProps.length - 1) {
