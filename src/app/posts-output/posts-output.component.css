@@ -1,40 +1,65 @@
-h1,
-h3 {
-    /* font-family: 'Libre Franklin', sans-serif; */
+.main {
+    height: auto;
+    width: auto;
+    border: 2px solid #F4E0B9;
+    background-color: #F4E0B9;
+}
+
+h1 {
     font-family: 'Russo One', sans-serif;
+    font-size: 70px;
+    color: #FE0000;
     text-align: center;
     font-style: italic;
     margin-top: 50px;
+    margin-bottom: 0;
+    /* border: 2px solid black; */
+}
+
+h4 {
+    font-family: 'Russo One', sans-serif;
+    color: #FE0000;
+    text-align: center;
+    font-style: italic;
+    /* border: 2px solid black; */
+    margin-top: 0;
+}
+
+h3 {
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    font-style: italic;
+    margin-top: 30px;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    /* background-color: #2196F3; */
     padding: 10px;
     align-content: space-evenly;
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #A8A196;
+    border: 1px solid #7D7463;
+    color: #fff;
     height: 120px;
-    /* width: 120px; */
-    padding: 5px;
+    /* border: 1px solid; */
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
     font-size: 13px;
     font-family: 'Libre Franklin', sans-serif;
     text-align: center;
-    border-radius: 5%;
-    /* margin: 5px 5px; */
+    border-radius: 10%;
     margin: 5px;
     margin-bottom: 10px;
     overflow: hidden;
 }
 
 .grid-item:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    margin: 3px;
+    /* filter: none;
+    -webkit-filter: grayscale(0); */
+    margin: 4px;
     cursor: pointer;
     transition: 0.2s;
 }
