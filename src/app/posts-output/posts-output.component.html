@@ -1,7 +1,8 @@
 <div class="main">
     <h1>HUNDY</h1>
-    <h4>100 Squares. Zero Meaning.</h4>
-    <h3 *ngIf="selectedSquare && squareClicked">LAST POST ID: {{ selectedSquare }}</h3>
+    <h4>100 Posts. Zero Meaning.</h4>
+    <h3 *ngIf="!squareClicked">CLICK A POST! WHY NOT!</h3>
+    <h3 *ngIf="selectedSquare && squareClicked">LAST POST CLICKED: ID {{ selectedSquare }}</h3>
     <div class="grid-container">
         <app-post-square 
             *ngFor="let post of allPosts; let i = index"

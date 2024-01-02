@@ -8,14 +8,18 @@ import { Component, Input } from '@angular/core';
 export class PostSquareComponent {
   @Input() post: Post = { userId: 0, id: 0, title: '', body: '' };
 
-  @Input() selectedSquare = 0;
+  @Input() selectedSquare: number = 0;
 
-  counter = 0;
-  squareProps = ['title', 'userId', 'id', 'body'];
-  currentProp = 'title';
+  counter: number = 0;
+  squareProps: string[] = ['title', 'userId', 'id', 'body'];
+  currentProp: string = 'title';
+  bodyTrunc: string = '';
 
-  constructor() { }
 
+  ngOnInit() {
+    this.bodyTrunc = this.post.body.substring(0, 70) + '...';
+  }
+  
   ngOnChanges() {
     if (this.selectedSquare !== this.post.id) {
       this.counter = 0;
