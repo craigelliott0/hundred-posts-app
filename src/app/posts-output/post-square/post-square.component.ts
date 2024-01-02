@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Post } from 'src/app/models/post-object';
 
 @Component({
   selector: 'app-post-square',
@@ -35,11 +36,4 @@ export class PostSquareComponent {
     }
     this.currentProp = this.squareProps[this.counter];
   }
-}
-
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
 }

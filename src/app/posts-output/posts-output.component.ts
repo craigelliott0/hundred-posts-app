@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { init } from '../store/posts.actions';
+import { Post } from '../models/post-object';
 
 @Component({
   selector: 'app-posts-output',
@@ -30,11 +31,4 @@ export class PostsOutputComponent {
     this.squareClicked = true;
     this.selectedSquare = this.allPosts[i].id;
   }
-}
-
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
 }
