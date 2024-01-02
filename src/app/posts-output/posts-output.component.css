@@ -5,29 +5,27 @@
     background-color: #F4E0B9;
 }
 
-h1 {
+h1, h3, h4 {
     font-family: 'Russo One', sans-serif;
-    font-size: 70px;
-    color: #FE0000;
     text-align: center;
     font-style: italic;
+}
+
+h1 {
+    font-size: 70px;
+    color: #FE0000;
     margin-top: 50px;
     margin-bottom: 0;
 }
 
 h4 {
-    font-family: 'Russo One', sans-serif;
     color: #FE0000;
-    text-align: center;
-    font-style: italic;
     margin-top: 0;
 }
 
 h3 {
-    font-family: 'Russo One', sans-serif;
-    text-align: center;
-    font-style: italic;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .grid-container {
@@ -53,9 +51,7 @@ h3 {
 }
 
 .grid-item:hover {
-    /* filter: none;
-    -webkit-filter: grayscale(0); */
-    /* margin: 4px; */
+    border: 1px solid white;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.4s;
 }
