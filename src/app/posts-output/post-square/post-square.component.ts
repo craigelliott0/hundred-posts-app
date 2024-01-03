@@ -36,4 +36,16 @@ export class PostSquareComponent {
     }
     this.currentProp = this.squareProps[this.counter];
   }
+
+  getProp(){
+    if (this.currentProp === 'body') {
+      return 'BODY: ' +  this.bodyTrunc;
+    } else if (this.currentProp === 'userId') {
+      return 'USER ID: ' + this.post.userId;
+    } else if (this.currentProp === 'id') {
+      return 'POST ID: ' + this.post.id;
+    } else {
+      return 'TITLE: ' + this.post.title;
+    }
+  }
 }

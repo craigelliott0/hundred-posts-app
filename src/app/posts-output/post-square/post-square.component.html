@@ -1,6 +1,3 @@
 <div (click)="increaseCounter()" class="square">
-    <p *ngIf="currentProp === 'title'"><span class="prop">TITLE:</span> {{ post.title }}</p>
-    <p *ngIf="currentProp === 'body'"><span class="prop">BODY:</span> {{ bodyTrunc }}</p>
-    <p *ngIf="currentProp === 'id'"><span class="prop">POST ID:</span> {{ post.id }}</p>
-    <p *ngIf="currentProp === 'userId'"><span class="prop">USER ID:</span> {{ post.userId }}</p>
+    <p [innerText]="getProp()"></p>
 </div>
