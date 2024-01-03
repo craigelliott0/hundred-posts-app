@@ -1,27 +1,20 @@
-# HundredPostsApp
+<h1>Hundy</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+An Angular app that retrieves 100 JSON objects from an API and renders them as clickable squares. 
 
-## Development server
+<h3>Project description</h3>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project uses NgRx for state management, which handles the storage of the API payload. An 'init' action is executed when the project is launched, which initiates the http request. A 'set' action passes the payload to the store via the reducer.
 
-## Code scaffolding
+The app-posts-output component accesses this data from the store, and within its template renders an instance of the app-post-square component for each object stored. (100 objects are stored, so therefore 100 instances of the app-post-square component are created.) Each object is rendered in the browser as a clickable square in a 10x10 grid.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The squares show each post's title by default. When a square is clicked repeatedly it will cycle through and display the post's properties in sequence ('UserID', 'PostID, 'Body', and then back to 'Title'). Only one square can be 'active' at a time. When a square is clicked it is the currently active square, and all other squares become 'inactive'. Inactive squares will reset to displaying their title. For display purposes, the 'Body' property is shown in a truncated form. In addition, the PostID of the last-clicked square is displayed.
 
-## Build
+The app-posts-output component utilises CSS grid and grid items. Additionally, the CSS hover attribute is used to give a certain feel of interactivity. For further stylistic personalisation, the project is styled with a retro colour palette and font, as well as a favicon.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<h3>Installation</h3>
 
-## Running unit tests
+Run npm install.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run ng serve to launch the application. Open http://localhost:4200/ to view the project in your browser.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
