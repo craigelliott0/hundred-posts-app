@@ -12,8 +12,8 @@ import { Post } from '../models/post-object';
 export class PostsOutputComponent {
   posts$: Observable<Post[]>;
   allPosts: Post[]
-  selectedSquare = 0;
-  squareClicked = false;
+  selectedSquare: number = 0;
+  squareClicked: boolean = false;
 
   constructor(private store: Store<{posts: []}>) { 
     this.posts$ = store.select('posts');
