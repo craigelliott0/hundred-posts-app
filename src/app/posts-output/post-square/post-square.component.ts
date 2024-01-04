@@ -38,14 +38,11 @@ export class PostSquareComponent {
   }
 
   getProp(){
+    const propText = this.currentProp.toUpperCase();
     if (this.currentProp === 'body') {
-      return 'BODY: ' +  this.bodyTrunc;
-    } else if (this.currentProp === 'userId') {
-      return 'USER ID: ' + this.post.userId;
-    } else if (this.currentProp === 'id') {
-      return 'POST ID: ' + this.post.id;
+      return `${propText}: ${this.bodyTrunc}`;
     } else {
-      return 'TITLE: ' + this.post.title;
+      return `${propText}: ${this.post[this.currentProp as keyof Post]}`;
     }
   }
 }
